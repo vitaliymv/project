@@ -1,0 +1,10 @@
+insert into manufact values
+(1, "BMW"),
+(2, "Audi"),
+(3, "VW");
+
+insert into model values
+(1, "X5", 1),
+(2, "Q5", 2),
+(3, "T4", 3);
+
