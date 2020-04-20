@@ -18,6 +18,7 @@ public interface ModelService {
 
     Optional<Model> findById(Integer id);
 
-
     List<Model> findByModelName(String parameter);
+
+    List<Model> findByManufacturerId(Long manufacturerId);
 }

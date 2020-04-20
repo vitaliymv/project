@@ -35,4 +35,21 @@ public class PartsServiceImpl implements PartsService {
     public List<Parts> findAll() {
         return partsRepository.findAll();
     }
+
+    @Override
+    public List<Parts> findByModelId(Long modelId) {
+        return partsRepository.findByModelId(modelId);
+    }
+
+    @Override
+    public List<Parts> findByCategoryIdAndModelId(Long categoryId, Long modelId) {
+        return partsRepository.findByCategoryIdAndModelId(categoryId, modelId);
+    }
+
+    @Override
+    public List<Parts> findByCategoryId(Long categoryId) {
+        return partsRepository.findByCategoryId(categoryId);
+    }
+
+
 }

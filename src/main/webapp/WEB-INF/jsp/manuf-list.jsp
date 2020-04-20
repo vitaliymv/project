@@ -12,35 +12,55 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
+
+
 <body>
-<div class="btn-group-vertical" >
-    <c:forEach items="${manufacturers}" var="manufacturer">
-        <a href="/${manufacturer.name}" type="button" class="btn btn-danger">
-                ${manufacturer.name}
-        </a>
-    </c:forEach>
 
-    <%--    <div class="dropdown-menu">--%>
-    <%--        <c:forEach items="${models}" var="model">--%>
-    <%--            <a class="dropdown-item" href="#">${model.name}</a>--%>
-    <%--        </c:forEach>--%>
-    <%--    </div>--%>
+<div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1 class="my-4">Shop Name</h1>
+                <div class="list-group">
+                    <c:forEach items="${manufacturers}" var="manufacturer">
+                        <a href="${pathContext}/manufacturer/${manufacturer.id}" class="list-group-item">
+                            <h5>${manufacturer.name}</h5>
+                        </a>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="https://livedemo00-opencart.template-help.com/opencart_65320/image/cache/catalog/slide-2-1170x303.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="https://livedemo00-opencart.template-help.com/opencart_65320/image/cache/catalog/slide-1-1170x303.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="https://livedemo00-opencart.template-help.com/opencart_65320/image/cache/catalog/slide-3-1170x303.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+        </div>
+    </div>
+
 
 </div>
-<div align="center">
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Model</th>
-            <th>Name</th>
-        </tr>
-        <c:forEach items="${models}" var="model">
-            <tr>
-                <td>${model.name}</td>
-                <td>${model.manufacturer.name}</td>
-            </tr>
-        </c:forEach>
-    </table>
-</div>
+
 
 </body>
 </html>

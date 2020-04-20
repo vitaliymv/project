@@ -51,4 +51,9 @@ public class ModelServiceImpl implements ModelService {
         return null;
     }
 
+    @Override
+    public List<Model> findByManufacturerId(Long manufacturerId) {
+        return modelRepository.findByManufacturerId(manufacturerId);
+    }
+
 }

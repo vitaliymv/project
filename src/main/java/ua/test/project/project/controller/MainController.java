@@ -19,12 +19,10 @@ public class MainController {
 
     private ModelService modelService;
     private ManufacturerService manufacturerService;
-    private PartsService partsService;
 
-    public MainController(ModelService modelService, ManufacturerService manufacturerService, PartsService partsService) {
+    public MainController(ModelService modelService, ManufacturerService manufacturerService) {
         this.modelService = modelService;
         this.manufacturerService = manufacturerService;
-        this.partsService = partsService;
     }
 
 //    @GetMapping(value = "/manuf-add")
@@ -36,7 +34,7 @@ public class MainController {
 //        return "index";
 //    }
 
-    @RequestMapping("/list")
+    @RequestMapping("/manufacturers")
     public ModelAndView getModels() {
         List<Model> modelList = modelService.findAll();
         ModelAndView mav = new ModelAndView("manuf-list");
@@ -44,6 +42,12 @@ public class MainController {
         List<Manufacturer> manufacturerList = manufacturerService.findAll();
         mav.addObject("manufacturers", manufacturerList);
         return mav;
+    }
+
+    @GetMapping("/test")
+    public String get(org.springframework.ui.Model model) {
+        model.addAttribute("manufacturer", manufacturerService.findAll());
+        return "test";
     }
 
 

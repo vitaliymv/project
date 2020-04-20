@@ -1,6 +1,7 @@
 package ua.test.project.project.services.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.test.project.project.domain.Category;
 import ua.test.project.project.repository.CategoryRepository;
@@ -12,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
+    @Autowired
     private CategoryRepository categoryRepository;
 
     @Override
