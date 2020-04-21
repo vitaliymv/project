@@ -23,12 +23,12 @@ public class PartsServiceImpl implements PartsService {
 
     @Override
     public Parts update(Parts parts) {
-        return null;
+        return partsRepository.save(parts);
     }
 
     @Override
-    public Parts deleteById(Long id) {
-        return null;
+    public void deleteById(Long id) {
+        partsRepository.deleteById(id);
     }
 
     @Override

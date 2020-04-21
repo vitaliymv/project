@@ -28,7 +28,7 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                 <div class="card h-50">
 
                     <a href="${pathContext}/manufacturer/${manufacturer.id}">
-<%--                        <img class="card-img-top" src="${manufacturer.image}" alt="">--%>
+                        <img class="card-img-top" src="http://placehold.it/320x240" alt="">
                         <h5>${manufacturer.name}</h5>
                     </a>
 

@@ -12,7 +12,7 @@ public interface PartsService {
 
     Parts create(Parts parts);
     Parts update(Parts parts);
-    Parts deleteById(Long id);
+    void deleteById(Long id);
     List<Parts> findAll();
     List<Parts> findByModelId(Long modelId);
 
