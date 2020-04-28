@@ -11,34 +11,87 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="../../resources/css/style.css" rel="stylesheet" type="text/css" >
 </head>
 <body>
-<div align="center">
 
     <div class="container">
+        <jsp:include page="navbar.jsp"/>
+
         <div class="row">
 
             <div class="col-lg-3">
-
-                <h1 class="my-4">Shop Name</h1>
+                <br><br><br>
+                <h1>AutoLux</h1>
+                <h4>Auto parts store</h4>
+                <br><br><br>
+                <h3 class="text-dark"> Category </h3>
+                <c:forEach items="${Category}" var="category">
+                    <a href="/models/${modelId}/${category.id}" type="button" class="list-group-item">
+                        <h5 class="text-muted">${category.name}</h5>
+                    </a>
+                </c:forEach>
             </div>
-                <div class="row">
-                    <c:forEach items = "${partsByModAndCat}" var="parts">
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">${parts.name}</a>
-                                    </h4>
-                                    <h5>${parts.price} $</h5>
-                                    <p class="card-text">${parts.model.name}   ${parts.category.name}</p>
-                                </div>
-                            </div>
+
+
+        <div class="col">
+            <br><br><br>
+            <div class="col-12 mt-3" style="border-bottom: 1px solid">
+                <div class="card">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper">
+                            <%--                            categoryr.image--%>
+                            <br><br><br><br>
+                            <img class="" src="https://cdn.worldvectorlogo.com/logos/toyota.svg" style="width: 140px" alt="Card image cap">
                         </div>
-                    </c:forEach>
+                        <div class="card-body">
+                            <%--                            category.name--%>
+                            <h3 class="card-title">TOYOTA</h3>
+                            <%--                            category.description--%>
+                            <p class="card-text" >Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <br><br><br>
+            <div class="row">
+                <c:forEach items = "${partsByModAndCat}" var="parts">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card h-70">
+                            <a href="/parts/${parts.id}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="/parts/${parts.id}">${parts.name}</a>
+                                </h5>
+                                <h5>${parts.price} $</h5>
+                                <p class="card-text">${parts.model.name}   ${parts.category.name}</p>
+                                <a href="" type="button" class="btn btn-success">
+                                    Add to bucket
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+            <%--            partsByManufacturer--%>
+        </div>
+
         </div>
     </div>
 </div>

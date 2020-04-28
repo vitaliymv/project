@@ -33,7 +33,6 @@ insert into model values
 (8, "X6", 1),
 (9, "Model X", 20),
 (10, "RS-6", 2),
-(43, "Model S", 20),
 (11, "RX350", 4),
 (12, "Ranger Raptor", 19),
 (13, "Mustang", 19),

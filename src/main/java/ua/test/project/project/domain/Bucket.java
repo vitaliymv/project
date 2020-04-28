@@ -20,7 +20,7 @@ public class Bucket {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Float price;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "buckets")

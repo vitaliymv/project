@@ -5,6 +5,7 @@ import ua.test.project.project.domain.Model;
 import ua.test.project.project.domain.Parts;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface PartsRepository extends JpaRepository<Parts, Long> {

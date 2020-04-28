@@ -19,9 +19,4 @@ public class ManufacturerController {
         model.addAttribute("models", modelService.findByManufacturerId(manufacturerId));
         return "models-list";
     }
-
-
-
-
-
 }

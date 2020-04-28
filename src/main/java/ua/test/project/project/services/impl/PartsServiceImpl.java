@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.test.project.project.domain.Parts;
 import ua.test.project.project.repository.PartsRepository;
+import ua.test.project.project.services.ModelService;
 import ua.test.project.project.services.PartsService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -40,6 +42,12 @@ public class PartsServiceImpl implements PartsService {
     public List<Parts> findByModelId(Long modelId) {
         return partsRepository.findByModelId(modelId);
     }
+
+    @Override
+    public Optional<Parts> findById(Long id) {
+        return partsRepository.findById(id);
+    }
+
 
     @Override
     public List<Parts> findByCategoryIdAndModelId(Long categoryId, Long modelId) {
