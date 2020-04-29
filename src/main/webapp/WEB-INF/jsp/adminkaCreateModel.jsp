@@ -42,16 +42,24 @@
                         <button type="button" class="btn btn-success" onclick="addModel()">Add model</button>
                     </form>
                     <script>
+                        var xhr = new XMLHttpRequest();
                         function addModel() {
                             var formDataModel = new FormData();
                             formDataModel.append("manufacturer", $("#ManufacturersSel option:selected").val());
                             formDataModel.append("name", $("#model").val());
                             console.log(formDataModel);
-                            var xhr = new XMLHttpRequest();
                             xhr.open("POST", "http://localhost:8080/admin/admin/adminchik/add-model");
                             xhr.send(formDataModel);
                             console.log($("#selectModel option:selected").val())
                         }
+
+                        xhr.onreadystatechange = function () {
+                            if (xhr.readyState === 4 && xhr.status === 200)
+                            {
+                                alert("Adding complete");
+                            }
+                        }
+
                     </script>
                 </div>
             </div>

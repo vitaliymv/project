@@ -64,6 +64,7 @@
                         <button type="button" class="btn btn-success" onclick="addPart()">Success</button>
                 </form>
                 <script>
+                    var xhr = new XMLHttpRequest();
                     function addPart() {
                         var formData = new FormData();
                         formData.append("model", $("#selectModel option:selected").val());
@@ -71,10 +72,16 @@
                         formData.append("price", $("#Price").val() );
                         formData.append("name", $("#Part").val());
                         formData.append("count", $("#Count").val());
-                        var xhr = new XMLHttpRequest();
                         xhr.open("POST", "http://localhost:8080/admin/admin/adminchik/create");
                         xhr.send(formData);
                     }
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200)
+                        {
+                            alert("Adding complete");
+                        }
+                    };
+
 
                     function selectManufacturer() {
                         $.ajax({

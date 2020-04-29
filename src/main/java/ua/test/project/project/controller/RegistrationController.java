@@ -23,15 +23,14 @@ public class RegistrationController {
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
-
         return "registration";
     }
 
     @PostMapping("/registration")
     public String addUser(@ModelAttribute User user) {
         if (userService.saveUser(user)) {
-            return "/";
+            return "login";
         }
-        return "/";
+        return "registration";
     }
 }

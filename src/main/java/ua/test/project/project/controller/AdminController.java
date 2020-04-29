@@ -41,6 +41,7 @@ public class AdminController {
         model.addAttribute("AllModels", modelService.findAll());
         model.addAttribute("AllCategory", categoryService.findAll());
         return "adminka";
+
     }
 
     @GetMapping("/admin/admin/adminchik/editing/{partId}")

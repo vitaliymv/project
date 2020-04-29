@@ -56,12 +56,18 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script>
+    var xhr = new XMLHttpRequest();
     function addCategory() {
         var formDataCategory = new FormData();
         formDataCategory.append("name", $("#Category").val());
-        var xhr = new XMLHttpRequest();
         xhr.open("POST", "http://localhost:8080/admin/admin/adminchik/add-category");
         xhr.send(formDataCategory);
+    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200)
+        {
+            alert("Adding complete");
+        }
     }
 </script>
 </body>

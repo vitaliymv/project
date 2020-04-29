@@ -42,13 +42,13 @@ Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
                         <div class="img-square-wrapper">
                             <%--                            categoryr.image--%>
                             <br><br><br><br>
-                            <img class="" src="https://cdn.worldvectorlogo.com/logos/toyota.svg" style="width: 140px" alt="Card image cap">
+                            <img class="" src="http://placehold.it/320x240" style="width: 200px" alt="Card image cap">
                         </div>
                         <div class="card-body">
                             <%--                            category.name--%>
-                            <h3 class="card-title">TOYOTA</h3>
+                            <h3 class="card-title">(Body parts) name.categpry</h3>
                             <%--                            category.description--%>
-                            <p class="card-text" >Some quick example text to build on the card
+                            <p class="card-text" > (description)Some quick example text to build on the card
                                 title and make up the bulk of the card's content.
                                 Some quick example text to build on the card
                                 title and make up the bulk of the card's content.

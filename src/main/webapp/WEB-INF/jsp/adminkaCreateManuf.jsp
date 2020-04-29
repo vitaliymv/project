@@ -56,13 +56,21 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script>
+    var xhr = new XMLHttpRequest();
     function addManufacturer() {
         var formDataManuf = new FormData();
         formDataManuf.append("name", $("#Manufacturer").val());
-        var xhr = new XMLHttpRequest();
+
         xhr.open("POST", "http://localhost:8080/admin/admin/adminchik/add-manuf");
         xhr.send(formDataManuf);
     }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200)
+        {
+            alert("Adding complete");
+        }
+    }
+
 </script>
 </body>
 </html>

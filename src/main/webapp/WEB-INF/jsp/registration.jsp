@@ -17,24 +17,24 @@
         <div class="container">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6">
-                        <form class="form-horizontal" method="post" action="/registration">
+                        <form class="form-horizontal" method="post">
 
                         <span class="heading">Sign up</span>
                             <div class="form-group">
                                 <a href="/login" type="button">Already have account</a>
                             </div>
                                 <div class="form-group">
-                                    <input type="text" id="username" class="form-control" name="username" placeholder="username">
+                                    <input type="text" id="username" class="form-control" name="username" placeholder="Username">
                                     <i class="fa fa-user"></i>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" id="password" class="form-control" name="pass" placeholder="pass">
+                                    <input type="text" id="password" class="form-control" name="pass" placeholder="Password">
                                     <i class="fa fa-lock"></i>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <input type="text" id="confirmPassword" class="form-control" name="cpass" placeholder="cpass">
+                                    <input type="text" id="confirmPassword" class="form-control" name="cpass" placeholder="Confirm password">
                                     <i class="fa fa-lock"></i>
                                 </div>
 
